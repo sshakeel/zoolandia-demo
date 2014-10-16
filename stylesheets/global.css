@@ -1,0 +1,392 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 1, ../sass/_circular-nav.scss */
+.circular-menu {
+  position: relative;
+  margin-bottom: 3em;
+  height: 15em;
+  background: rgba(0, 0, 0, 0.05);
+  font-family: 'Lato', Arial, sans-serif;
+}
+
+/* line 9, ../sass/_circular-nav.scss */
+.circular-menu > h2 {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 12em;
+  opacity: 0.1;
+  cursor: default;
+}
+
+/* line 23, ../sass/_circular-nav.scss */
+.cn-button {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 11;
+  margin-top: -2.25em;
+  margin-left: -2.25em;
+  padding-top: 0em;
+  width: 4.5em;
+  height: 4.5em;
+  border: none;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+}
+
+/* line 46, ../sass/_circular-nav.scss */
+.csstransforms .cn-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 10;
+  margin-top: -13em;
+  margin-left: -13.5em;
+  width: 27em;
+  height: 27em;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 0;
+  -webkit-transition: all .3s ease 0.3s;
+  -moz-transition: all .3s ease 0.3s;
+  transition: all .3s ease 0.3s;
+  -webkit-transform: scale(0.1);
+  -ms-transform: scale(0.1);
+  -moz-transform: scale(0.1);
+  transform: scale(0.1);
+  pointer-events: none;
+}
+
+/*cover to prevent extra space of anchors from being clickable*/
+/* line 70, ../sass/_circular-nav.scss */
+.csstransforms .cn-wrapper:after {
+  content: ".";
+  display: block;
+  font-size: 2em;
+  width: 6.2em;
+  height: 6.2em;
+  position: absolute;
+  left: 50%;
+  margin-left: -3.1em;
+  top: 50%;
+  margin-top: -3.1em;
+  border-radius: 50%;
+  z-index: 10;
+  color: transparent;
+}
+
+/* line 86, ../sass/_circular-nav.scss */
+.csstransforms .opened-nav {
+  border-radius: 50%;
+  opacity: 1;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* line 99, ../sass/_circular-nav.scss */
+.csstransforms .cn-wrapper li {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+  margin-top: -1.3em;
+  margin-left: -10em;
+  width: 10em;
+  height: 10em;
+  font-size: 1.5em;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transform: rotate(76deg) skew(60deg);
+  -moz-transform: rotate(76deg) skew(60deg);
+  -ms-transform: rotate(76deg) skew(60deg);
+  transform: rotate(76deg) skew(60deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  pointer-events: none;
+}
+
+/* line 122, ../sass/_circular-nav.scss */
+.csstransforms .cn-wrapper li a {
+  position: absolute;
+  position: fixed;
+  /* fix the displacement bug in webkit browsers when using tab key */
+  right: -7.25em;
+  bottom: -7.25em;
+  display: block;
+  width: 14.5em;
+  height: 14.5em;
+  border-radius: 50%;
+  background: #429a67;
+  background: -webkit-radial-gradient(transparent 35%, #429a67 35%);
+  background: -moz-radial-gradient(transparent 35%, #429a67 35%);
+  background: radial-gradient(transparent 35%, #429a67 35%);
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2em;
+  line-height: 2;
+  -webkit-transform: skew(-60deg) rotate(-75deg) scale(1);
+  -moz-transform: skew(-60deg) rotate(-75deg) scale(1);
+  -ms-transform: skew(-60deg) rotate(-75deg) scale(1);
+  transform: skew(-60deg) rotate(-75deg) scale(1);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  pointer-events: auto;
+}
+
+/* line 149, ../sass/_circular-nav.scss */
+.csstransforms .cn-wrapper li a span {
+  position: relative;
+  top: 1.8em;
+  display: block;
+  font-size: .5em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* line 160, ../sass/_circular-nav.scss */
+.csstransforms .cn-wrapper li a:hover,
+.csstransforms .cn-wrapper li a:active,
+.csstransforms .cn-wrapper li a:focus {
+  background: -webkit-radial-gradient(transparent 35%, #449e6a 35%);
+  background: -moz-radial-gradient(transparent 35%, #449e6a 35%);
+  background: radial-gradient(transparent 35%, #449e6a 35%);
+}
+
+/* line 166, ../sass/_circular-nav.scss */
+.csstransforms .opened-nav li {
+  -webkit-transition: all .3s ease .3s;
+  -moz-transition: all .3s ease .3s;
+  transition: all .3s ease .3s;
+}
+
+/* line 172, ../sass/_circular-nav.scss */
+.csstransforms .opened-nav li:first-child {
+  -webkit-transform: rotate(-14deg) skew(60deg);
+  -moz-transform: rotate(-14deg) skew(60deg);
+  -ms-transform: rotate(-14deg) skew(60deg);
+  transform: rotate(-14deg) skew(60deg);
+}
+
+/* line 179, ../sass/_circular-nav.scss */
+.csstransforms .opened-nav li:nth-child(2) {
+  -webkit-transform: rotate(76deg) skew(60deg);
+  -moz-transform: rotate(76deg) skew(60deg);
+  -ms-transform: rotate(76deg) skew(60deg);
+  transform: rotate(76deg) skew(60deg);
+}
+
+/* line 186, ../sass/_circular-nav.scss */
+.csstransforms .opened-nav li:nth-child(3) {
+  -webkit-transform: rotate(166deg) skew(60deg);
+  -moz-transform: rotate(166deg) skew(60deg);
+  -ms-transform: rotate(166deg) skew(60deg);
+  transform: rotate(166deg) skew(60deg);
+}
+
+/* line 193, ../sass/_circular-nav.scss */
+.csstransforms .opened-nav li:nth-child(4) {
+  -webkit-transform: rotate(256deg) skew(60deg);
+  -moz-transform: rotate(256deg) skew(60deg);
+  -ms-transform: rotate(256deg) skew(60deg);
+  transform: rotate(256deg) skew(60deg);
+}
+
+/*.csstransforms .opened-nav li:nth-child(5) {
+	-webkit-transform: rotate(108deg) skew(60deg);
+	-moz-transform: rotate(108deg) skew(60deg);
+	-ms-transform: rotate(108deg) skew(60deg);
+	transform: rotate(108deg) skew(60deg);
+}
+
+.csstransforms .opened-nav li:nth-child(6) {
+	-webkit-transform: rotate(140deg) skew(60deg);
+	-moz-transform: rotate(140deg) skew(60deg);
+	-ms-transform: rotate(140deg) skew(60deg);
+	transform: rotate(140deg) skew(60deg);
+}
+
+.csstransforms .opened-nav li:nth-child(7) {
+	-webkit-transform: rotate(172deg) skew(60deg);
+	-moz-transform: rotate(172deg) skew(60deg);
+	-ms-transform: rotate(172deg) skew(60deg);
+	transform: rotate(172deg) skew(60deg);
+}*/
+/* line 221, ../sass/_circular-nav.scss */
+.no-csstransforms .cn-wrapper {
+  overflow: hidden;
+  margin: 10em auto;
+  padding: .5em;
+  text-align: center;
+}
+
+/* line 228, ../sass/_circular-nav.scss */
+.no-csstransforms .cn-wrapper ul {
+  display: inline-block;
+}
+
+/* line 232, ../sass/_circular-nav.scss */
+.no-csstransforms .cn-wrapper li {
+  float: left;
+  width: 5em;
+  height: 5em;
+  background-color: #fff;
+  text-align: center;
+  font-size: 1em;
+  line-height: 5em;
+}
+
+/* line 242, ../sass/_circular-nav.scss */
+.no-csstransforms .cn-wrapper li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 252, ../sass/_circular-nav.scss */
+.no-csstransforms .cn-wrapper li a:hover,
+.no-csstransforms .cn-wrapper li a:active,
+.no-csstransforms .cn-wrapper li a:focus {
+  background-color: #f8f8f8;
+}
+
+/* line 256, ../sass/_circular-nav.scss */
+.no-csstransforms .cn-wrapper li.active a {
+  background-color: #6F325C;
+  color: #fff;
+}
+
+/* line 261, ../sass/_circular-nav.scss */
+.no-csstransforms .cn-button {
+  display: none;
+}
+
+@media only screen and (max-width: 620px) {
+  /* line 266, ../sass/_circular-nav.scss */
+  .no-csstransforms li {
+    width: 4em;
+    height: 4em;
+    line-height: 4em;
+  }
+}
+@media only screen and (max-width: 500px) {
+  /* line 274, ../sass/_circular-nav.scss */
+  .no-ccstransforms .cn-wrapper {
+    padding: .5em;
+  }
+
+  /* line 278, ../sass/_circular-nav.scss */
+  .no-csstransforms .cn-wrapper li {
+    width: 4em;
+    height: 4em;
+    font-size: .9em;
+    line-height: 4em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  /* line 287, ../sass/_circular-nav.scss */
+  .csstransforms .cn-wrapper {
+    font-size: .68em;
+  }
+
+  /* line 291, ../sass/_circular-nav.scss */
+  .cn-button {
+    font-size: 1em;
+  }
+}
+@media only screen and (max-width: 420px) {
+  /* line 297, ../sass/_circular-nav.scss */
+  .no-csstransforms .cn-wrapper li {
+    width: 100%;
+    height: 3em;
+    line-height: 3em;
+  }
+}
