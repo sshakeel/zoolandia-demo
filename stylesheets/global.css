@@ -69,14 +69,30 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 1, ../sass/_circular-nav.scss */
 .circular-menu {
-  position: relative;
-  margin-bottom: 3em;
+  position: fixed;
   height: 15em;
-  background: rgba(0, 0, 0, 0.05);
-  font-family: 'Lato', Arial, sans-serif;
+  width: 155em;
+  border-radius: 50%;
+  display: none;
 }
 
-/* line 9, ../sass/_circular-nav.scss */
+/* line 13, ../sass/_circular-nav.scss */
+.cn-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: none;
+}
+/* line 22, ../sass/_circular-nav.scss */
+.cn-overlay.show {
+  display: block;
+}
+
+/* line 28, ../sass/_circular-nav.scss */
 .circular-menu > h2 {
   position: absolute;
   overflow: hidden;
@@ -91,7 +107,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   cursor: default;
 }
 
-/* line 23, ../sass/_circular-nav.scss */
+/* line 42, ../sass/_circular-nav.scss */
 .cn-button {
   position: absolute;
   top: 100%;
@@ -112,12 +128,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -webkit-backface-visibility: hidden;
 }
 
-/* line 46, ../sass/_circular-nav.scss */
+/* line 66, ../sass/_circular-nav.scss */
 .csstransforms .cn-wrapper {
   position: absolute;
-  top: 100%;
-  left: 50%;
-  z-index: 10;
+  z-index: 10000;
   margin-top: -13em;
   margin-left: -13.5em;
   width: 27em;
@@ -136,7 +150,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /*cover to prevent extra space of anchors from being clickable*/
-/* line 70, ../sass/_circular-nav.scss */
+/* line 90, ../sass/_circular-nav.scss */
 .csstransforms .cn-wrapper:after {
   content: ".";
   display: block;
@@ -153,7 +167,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   color: transparent;
 }
 
-/* line 86, ../sass/_circular-nav.scss */
+/* line 106, ../sass/_circular-nav.scss */
 .csstransforms .opened-nav {
   border-radius: 50%;
   opacity: 1;
@@ -167,7 +181,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   pointer-events: auto;
 }
 
-/* line 99, ../sass/_circular-nav.scss */
+/* line 119, ../sass/_circular-nav.scss */
 .csstransforms .cn-wrapper li {
   position: absolute;
   top: 0;
@@ -191,7 +205,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   pointer-events: none;
 }
 
-/* line 122, ../sass/_circular-nav.scss */
+/* line 142, ../sass/_circular-nav.scss */
 .csstransforms .cn-wrapper li a {
   position: absolute;
   position: fixed;
@@ -202,11 +216,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 14.5em;
   height: 14.5em;
   border-radius: 50%;
-  background: #429a67;
-  background: -webkit-radial-gradient(transparent 35%, #429a67 35%);
-  background: -moz-radial-gradient(transparent 35%, #429a67 35%);
-  background: radial-gradient(transparent 35%, #429a67 35%);
-  color: #fff;
+  background: #fff;
+  background: -webkit-radial-gradient(transparent 35%, white 35%);
+  background: -moz-radial-gradient(transparent 35%, white 35%);
+  background: radial-gradient(transparent 35%, #ffffff 35%);
+  color: #429a67;
   text-align: center;
   text-decoration: none;
   font-size: 1.2em;
@@ -220,7 +234,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   pointer-events: auto;
 }
 
-/* line 149, ../sass/_circular-nav.scss */
+/* line 169, ../sass/_circular-nav.scss */
 .csstransforms .cn-wrapper li a span {
   position: relative;
   top: 1.8em;
@@ -230,23 +244,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-transform: uppercase;
 }
 
-/* line 160, ../sass/_circular-nav.scss */
+/* line 180, ../sass/_circular-nav.scss */
 .csstransforms .cn-wrapper li a:hover,
 .csstransforms .cn-wrapper li a:active,
 .csstransforms .cn-wrapper li a:focus {
-  background: -webkit-radial-gradient(transparent 35%, #449e6a 35%);
-  background: -moz-radial-gradient(transparent 35%, #449e6a 35%);
-  background: radial-gradient(transparent 35%, #449e6a 35%);
+  background: -webkit-radial-gradient(transparent 35%, white 35%);
+  background: -moz-radial-gradient(transparent 35%, white 35%);
+  background: radial-gradient(transparent 35%, #ffffff 35%);
 }
 
-/* line 166, ../sass/_circular-nav.scss */
+/* line 186, ../sass/_circular-nav.scss */
 .csstransforms .opened-nav li {
   -webkit-transition: all .3s ease .3s;
   -moz-transition: all .3s ease .3s;
   transition: all .3s ease .3s;
 }
 
-/* line 172, ../sass/_circular-nav.scss */
+/* line 192, ../sass/_circular-nav.scss */
 .csstransforms .opened-nav li:first-child {
   -webkit-transform: rotate(-14deg) skew(60deg);
   -moz-transform: rotate(-14deg) skew(60deg);
@@ -254,7 +268,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transform: rotate(-14deg) skew(60deg);
 }
 
-/* line 179, ../sass/_circular-nav.scss */
+/* line 199, ../sass/_circular-nav.scss */
 .csstransforms .opened-nav li:nth-child(2) {
   -webkit-transform: rotate(76deg) skew(60deg);
   -moz-transform: rotate(76deg) skew(60deg);
@@ -262,7 +276,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transform: rotate(76deg) skew(60deg);
 }
 
-/* line 186, ../sass/_circular-nav.scss */
+/* line 206, ../sass/_circular-nav.scss */
 .csstransforms .opened-nav li:nth-child(3) {
   -webkit-transform: rotate(166deg) skew(60deg);
   -moz-transform: rotate(166deg) skew(60deg);
@@ -270,7 +284,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   transform: rotate(166deg) skew(60deg);
 }
 
-/* line 193, ../sass/_circular-nav.scss */
+/* line 213, ../sass/_circular-nav.scss */
 .csstransforms .opened-nav li:nth-child(4) {
   -webkit-transform: rotate(256deg) skew(60deg);
   -moz-transform: rotate(256deg) skew(60deg);
@@ -298,7 +312,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 	-ms-transform: rotate(172deg) skew(60deg);
 	transform: rotate(172deg) skew(60deg);
 }*/
-/* line 221, ../sass/_circular-nav.scss */
+/* line 241, ../sass/_circular-nav.scss */
 .no-csstransforms .cn-wrapper {
   overflow: hidden;
   margin: 10em auto;
@@ -306,12 +320,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-align: center;
 }
 
-/* line 228, ../sass/_circular-nav.scss */
+/* line 248, ../sass/_circular-nav.scss */
 .no-csstransforms .cn-wrapper ul {
   display: inline-block;
 }
 
-/* line 232, ../sass/_circular-nav.scss */
+/* line 252, ../sass/_circular-nav.scss */
 .no-csstransforms .cn-wrapper li {
   float: left;
   width: 5em;
@@ -322,7 +336,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   line-height: 5em;
 }
 
-/* line 242, ../sass/_circular-nav.scss */
+/* line 262, ../sass/_circular-nav.scss */
 .no-csstransforms .cn-wrapper li a {
   display: block;
   width: 100%;
@@ -331,26 +345,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   text-decoration: none;
 }
 
-/* line 252, ../sass/_circular-nav.scss */
+/* line 272, ../sass/_circular-nav.scss */
 .no-csstransforms .cn-wrapper li a:hover,
 .no-csstransforms .cn-wrapper li a:active,
 .no-csstransforms .cn-wrapper li a:focus {
   background-color: #f8f8f8;
 }
 
-/* line 256, ../sass/_circular-nav.scss */
+/* line 276, ../sass/_circular-nav.scss */
 .no-csstransforms .cn-wrapper li.active a {
   background-color: #6F325C;
   color: #fff;
 }
 
-/* line 261, ../sass/_circular-nav.scss */
+/* line 281, ../sass/_circular-nav.scss */
 .no-csstransforms .cn-button {
   display: none;
 }
 
 @media only screen and (max-width: 620px) {
-  /* line 266, ../sass/_circular-nav.scss */
+  /* line 286, ../sass/_circular-nav.scss */
   .no-csstransforms li {
     width: 4em;
     height: 4em;
@@ -358,12 +372,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 274, ../sass/_circular-nav.scss */
+  /* line 294, ../sass/_circular-nav.scss */
   .no-ccstransforms .cn-wrapper {
     padding: .5em;
   }
 
-  /* line 278, ../sass/_circular-nav.scss */
+  /* line 298, ../sass/_circular-nav.scss */
   .no-csstransforms .cn-wrapper li {
     width: 4em;
     height: 4em;
@@ -372,18 +386,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
 }
 @media only screen and (max-width: 480px) {
-  /* line 287, ../sass/_circular-nav.scss */
+  /* line 307, ../sass/_circular-nav.scss */
   .csstransforms .cn-wrapper {
     font-size: .68em;
   }
 
-  /* line 291, ../sass/_circular-nav.scss */
+  /* line 311, ../sass/_circular-nav.scss */
   .cn-button {
     font-size: 1em;
   }
 }
 @media only screen and (max-width: 420px) {
-  /* line 297, ../sass/_circular-nav.scss */
+  /* line 317, ../sass/_circular-nav.scss */
   .no-csstransforms .cn-wrapper li {
     width: 100%;
     height: 3em;
